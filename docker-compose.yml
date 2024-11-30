@@ -21,15 +21,16 @@ services:
     container_name: sonarqube
     ports:
       - "9000:9000"
-#    restart: always
     environment:
       - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+      - SONAR_SEARCH_JAVA_OPTS="-Xms2g -Xmx2g"  # Set min/max heap size to 2GB each
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
     networks:
       - ci_network
+    mem_reservation: 2g
 
   maven:
     image: maven:3.8.3-openjdk-17
