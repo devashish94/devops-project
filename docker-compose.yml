@@ -5,6 +5,7 @@ services:
     image: jenkins/jenkins:lts
     privileged: true
     user: root
+    restart: always
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -20,6 +21,7 @@ services:
     container_name: sonarqube
     ports:
       - "9000:9000"
+    restart: always
     environment:
       - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
     volumes:
@@ -32,6 +34,7 @@ services:
   maven:
     image: maven:3.8-openjdk-11
     container_name: maven
+    restart: always
     volumes:
       - .:/app
       - maven_cache:/root/.m2
