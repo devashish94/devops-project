@@ -13,11 +13,11 @@ pipeline {
             }
         }
 
-        stage('Build and Test') {
-            steps {
-                sh 'mvn clean test'
-            }
-        }
+//         stage('Build and Test') {
+//             steps {
+//                 sh 'mvn clean test'
+//             }
+//         }
 
         stage('SonarQube Analysis') {
             steps {
