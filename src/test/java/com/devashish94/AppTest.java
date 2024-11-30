@@ -10,7 +10,7 @@ class AppTest {
     void testAdd() {
         App app = new App();
         assertEquals(5, app.add(2, 3), "The addition of 2 and 3 should be 5.");
-        assertEquals(-1, app.add(-2, -3), "The addition of -2 and -3 should be -5.");
+        assertEquals(-5, app.add(-2, -3), "The addition of -2 and -3 should be -5.");
         assertEquals(1, app.add(-2, 3), "The addition of -2 and 3 should be 1.");
     }
 
